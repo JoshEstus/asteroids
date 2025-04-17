@@ -3,6 +3,8 @@ from constants import *
 
 def main():
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     print("Starting Asteroids!")
     while True:
@@ -11,8 +13,8 @@ def main():
                 return
         screen.fill(color="black")
         pygame.display.flip()
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
+        delta = clock.tick(60)
+        dt = delta/1000
 
 
 
